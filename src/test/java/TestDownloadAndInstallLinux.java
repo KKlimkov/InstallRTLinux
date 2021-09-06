@@ -194,7 +194,7 @@ public class TestDownloadAndInstallLinux {
     public void TestInstall() throws IOException {
         String command2 = "cd /tmp; sudo chmod u+x ./install.sh; sudo bash ./install.sh "+ System.getProperty("InstallOption");
         String result = LogProcessSSH(user, password, host, command2);
-        assertFalse(result.contains("BAD"));
+        assertFalse(result.contains("Starting MasterPLC...   OK"));
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -210,7 +210,7 @@ public class TestDownloadAndInstallLinux {
 
         String command3 = "sudo /etc/init.d/mplc4 restart";
         String result = LogProcessSSH(user, password, host, command3);
-        assertFalse(result.contains("BAD"));
+        assertTrue(result.contains("Starting MasterPLC...   OK"));
 
     }
 }
