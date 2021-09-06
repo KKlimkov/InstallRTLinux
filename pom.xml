@@ -30,7 +30,11 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <HostLinuxIP>${HostLinuxIP}</HostLinuxIP>
                         <!--suppress UnresolvedMavenProperty -->
-                        <InstallOption>${InstallOption}</InstallOption>
+                        <InstallOption1>${InstallOption1}</InstallOption1>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <InstallOption2>${InstallOption2}</InstallOption2>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <InstallOption3>${InstallOption3}</InstallOption3>
                     </systemPropertyVariables>
 
                     <!-- deprecated -->
@@ -52,9 +56,17 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <value>${HostLinuxIP}</value>
 
-                            <name>InstallOption</name>
+                            <name>InstallOption1</name>
                             <!--suppress UnresolvedMavenProperty -->
-                            <value>${InstallOption}</value>
+                            <value>${InstallOption1}</value>
+
+                            <name>InstallOption2</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${InstallOption2}</value>
+
+                            <name>InstallOption3</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${InstallOption3}</value>
 
                         </property>
                     </systemProperties>
