@@ -192,7 +192,7 @@ public class TestDownloadAndInstallLinux {
     @Tag("InstallLinux")
     @Order(3)
     public void TestInstall() throws IOException {
-        String command2 = "cd /tmp; sudo chmod u+x ./install.sh; sudo bash ./install.sh --i386-dep --with-reports --http-port=8043";
+        String command2 = "cd /tmp; sudo chmod u+x ./install.sh; sudo bash ./install.sh "+ System.getProperty("InstallOption");
         String result = LogProcessSSH(user, password, host, command2);
         assertFalse(result.contains("Starting MasterPLC...   BAD"));
         try {

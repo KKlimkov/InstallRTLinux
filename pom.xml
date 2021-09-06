@@ -29,6 +29,8 @@
                         <UserLinuxPassword>${UserLinuxPassword}</UserLinuxPassword>
                         <!--suppress UnresolvedMavenProperty -->
                         <HostLinuxIP>${HostLinuxIP}</HostLinuxIP>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <InstallOption>${InstallOption}</InstallOption>
                     </systemPropertyVariables>
 
                     <!-- deprecated -->
@@ -50,6 +52,9 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <value>${HostLinuxIP}</value>
 
+                            <name>InstallOption</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${InstallOption}</value>
 
                         </property>
                     </systemProperties>
