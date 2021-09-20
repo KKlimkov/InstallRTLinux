@@ -35,6 +35,8 @@
                         <InstallOption2>${InstallOption2}</InstallOption2>
                         <!--suppress UnresolvedMavenProperty -->
                         <InstallOption3>${InstallOption3}</InstallOption3>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <Branch>${Branch}</Branch>
                     </systemPropertyVariables>
 
                     <!-- deprecated -->
@@ -68,6 +70,9 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <value>${InstallOption3}</value>
 
+                            <name>Branch</name>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <value>${Branch}</value>
                         </property>
                     </systemProperties>
 
