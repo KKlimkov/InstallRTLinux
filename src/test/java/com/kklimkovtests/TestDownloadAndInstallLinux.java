@@ -1,12 +1,16 @@
 package com.kklimkovtests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
-
 import java.io.IOException;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import com.jcraft.jsch.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+@Owner("KKlimkov")
+@Layer("install")
+@Feature("InstallLinux")
 
 @TestMethodOrder(OrderAnnotation.class)
 public class TestDownloadAndInstallLinux {
@@ -21,7 +25,8 @@ public class TestDownloadAndInstallLinux {
 
     @DisplayName("Download RT from FTP")
     @Test
-    @Tag("DownloadFTP")
+    @Story("Install MS4D RT")
+    @Tags({@Tag("Install"),@Tag("Linux")})
     @Order(1)
 
     public void DownloadAndCheck() throws IOException, InterruptedException {
@@ -52,7 +57,8 @@ public class TestDownloadAndInstallLinux {
 
     @DisplayName("Send Install Files via SSH")
     @Test
-    @Tag("SendToLinux")
+    @Story("Install MS4D RT")
+    @Tags({@Tag("Install"),@Tag("Linux")})
     @Order(2)
 
     public void SendFiles() throws IOException, JSchException {
@@ -68,12 +74,12 @@ public class TestDownloadAndInstallLinux {
 
     @DisplayName("InstallOnLinux")
     @Test
-    @Tag("InstallLinux")
+    @Story("Install MS4D RT")
+    @Tags({@Tag("Install"),@Tag("Linux")})
     @Order(3)
     public void TestInstall() throws IOException {
         String command2 = "cd /tmp; sudo chmod u+x ./install.sh; sudo bash ./install.sh "+ System.getProperty("InstallOption1") + " " + System.getProperty("InstallOption2") + " "+ System.getProperty("InstallOption3") ;
         Steps.ExecuteCommandSSH(command2,"Starting MasterPLC...   BAD");
-        //assertFalse(result.contains("Starting MasterPLC...   OK"));
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -83,13 +89,13 @@ public class TestDownloadAndInstallLinux {
 
     @DisplayName("RestartMPLCLinux")
     @Test
-    @Tag("RestartMPLCLinux")
+    @Story("Install MS4D RT")
+    @Tags({@Tag("Install"),@Tag("Linux")})
     @Order(4)
     public void TestRestart() throws IOException, JSchException {
 
         String command3 = "sudo /etc/init.d/mplc4 restart";
         Steps.ExecuteCommandSSH(command3,"Starting MasterPLC...   BAD");
-        //assertTrue(result.contains("Starting MasterPLC...   OK"));
         Steps.CloseSSH();
     }
 
