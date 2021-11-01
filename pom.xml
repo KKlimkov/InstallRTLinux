@@ -36,6 +36,8 @@
                         <!--suppress UnresolvedMavenProperty -->
                         <InstallOption3>${InstallOption3}</InstallOption3>
                         <!--suppress UnresolvedMavenProperty -->
+                        <InstallOption3>${FtpPassword}</InstallOption3>
+                        <!--suppress UnresolvedMavenProperty -->
                         <Branch>${Branch}</Branch>
                     </systemPropertyVariables>
 
@@ -73,6 +75,10 @@
                             <name>Branch</name>
                                 <!--suppress UnresolvedMavenProperty -->
                                 <value>${Branch}</value>
+
+                            <name>FtpPassword</name>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <value>${FtpPassword}</value>
                         </property>
                     </systemProperties>
 

@@ -33,13 +33,13 @@ public class TestDownloadAndInstallLinux {
 
         String FtpUrl = null;
         if (System.getProperty("Branch").equals("1.2")) {FtpUrl=
-                " ftp://ftpGuestSupport:21B74F6E@support.insat.ru/Updates/Installation/MasterSCADA%204D/RunTime/"
+                " ftp://ftpGuestSupport:"+System.getProperty("FtpPassword")+"@support.insat.ru/Updates/Installation/MasterSCADA%204D/RunTime/"
                         + System.getProperty("PlatformName");}
         else if (System.getProperty("Branch").equals("RC")) {FtpUrl =
-                " ftp://ftpGuestSupport:21B74F6E@support.insat.ru/Dev/MasterSCADA4D/RT/1.2.RC/"
+                " ftp://ftpGuestSupport:"+System.getProperty("FtpPassword")+"@support.insat.ru/Dev/MasterSCADA4D/RT/1.2.RC/"
                         + System.getProperty("PlatformName");}
         else if (System.getProperty("Branch").equals("Beta")) {FtpUrl =
-                " ftp://ftpGuestSupport:21B74F6E@support.insat.ru/Dev/MasterSCADA4D/Beta_RT/"
+                " ftp://ftpGuestSupport:"+System.getProperty("FtpPassword")+"@support.insat.ru/Dev/MasterSCADA4D/Beta_RT/"
                         + System.getProperty("PlatformName");}
 
         Steps.CreateDirectory(PlatformDirectoryName);

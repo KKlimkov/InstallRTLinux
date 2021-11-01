@@ -56,10 +56,10 @@ public class Steps {
             JSch jsch = new JSch();
             java.util.Properties config = new java.util.Properties();
             config.put("StrictHostKeyChecking", "no");
-
+            //config.put("PreferredAuthentications", "password");
             session = jsch.getSession(user, host, 22);
-            session.setConfig(config);
             session.setPassword(password);
+            session.setConfig(config);
             session.connect();
             System.out.println("Channel Connected to machine " + host);
         } catch (JSchException e) {
